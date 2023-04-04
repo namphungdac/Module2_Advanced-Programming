@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    const inventory = [
+        {type: "machine", value: 5000},
+        {type: "machine", value: 650},
+        {type: "duck", value: 10},
+        {type: "furniture", value: 1200},
+        {type: "machine", value: 77}
+    ]
+    let totalMachineValue = (arr) => {
+        let arrResult = arr.filter(element => element.type === "machine");
+        let sum = 0;
+        sum = arrResult.reduce((sum, value) => {
+            return sum + value.value;
+        }, 0);
+        return sum;
+    }
+    console.log(totalMachineValue(inventory));
+
+    // let totalMachineValue = (arr) => {
+    //   let arrResult = arr.filter(element => element.type === "machine");
+    //   let sum = 0;
+    //   for (let i = 0; i < arrResult.length; i++) {
+    //     if (arrResult[i].type === "machine") {
+    //       sum += arrResult[i].value;
+    //     }
+    //   }
+    //   return sum;
+    // }
+    // console.log(totalMachineValue(inventory));
+</script>
+</body>
+</html>

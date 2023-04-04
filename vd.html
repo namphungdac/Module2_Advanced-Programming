@@ -6,15 +6,38 @@
 </head>
 <body>
 <script>
-    let arr1 = [1, 2, 3, 4, 5, 6, 7];
-    let square = (arr) => {
-        let arrResult = [];
-        for(let i of arr) {
-            arrResult.push(i*i);
-        }
-        return arrResult;
-    }
-    console.log(square(arr1));
+    let arr = [
+        {type: "machine", value: 5000},
+        {type: "machine", value: 650},
+        {type: "duck", value: 10},
+        {type: "furniture", value: 1200},
+        {type: "machine", value: 77}
+    ]
+    let x = arr.reduce((sum, element) => {
+        return sum + element.value
+    }, 0);
+    console.log(x)
+
+    // const topics = [
+    //     {
+    //         topic: "ReactJS",
+    //         posts: [
+    //             { postID: "id1", title: "title1" },
+    //             { postID: "id2", title: "title2" },
+    //         ],
+    //     },
+    //     {
+    //         topic: "Vue.js",
+    //         posts: [
+    //             { postID: "id3", title: "title3" },
+    //             { postID: "id4", title: "title4" },
+    //         ],
+    //     },
+    // ];
+    // const allPosts = topics.reduce((acc, cur) => {
+    //     return [...acc, ...cur.posts];
+    // }, []);
+    // console.log(allPosts);
 </script>
 </body>
 </html>
