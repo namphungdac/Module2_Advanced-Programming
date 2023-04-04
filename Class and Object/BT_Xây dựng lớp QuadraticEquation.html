@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  class QuadraticEquation  {
+    a;
+    b;
+    c;
+    constructor(a,b,c) {
+      this.a = a;
+      this.b = b;
+      this.c = c;
+    }
+    getDiscriminant() {
+      return this.b * this.b - 4*this.a*this.c;
+    }
+    getRoot1() {
+      if (this.getDiscriminant()<0) {
+        return 0;
+      } else {
+        return (-this.b + Math.pow(this.getDiscriminant(),0.5))/(2*this.a);
+      }
+    }
+    getRoot2() {
+      if (this.getDiscriminant()<0) {
+        return 0;
+      } else {
+        return (-this.b - Math.pow(this.getDiscriminant(),0.5))/(2*this.a);
+      }
+    }
+    getResult() {
+      if (this.getDiscriminant() > 0) {
+        return `The equation has two roots: ${this.getRoot1()} and ${this.getRoot2()}`;
+      } else if(this.getDiscriminant() === 0) {
+        return `The equation has one roots: ${this.getRoot1()}`;
+      } else {
+        return `The equation has no roots`;
+      }
+    }
+  }
+  let equation1 = new QuadraticEquation(1,3,1);
+  console.log(equation1.getResult());
+  let equation2 = new QuadraticEquation(1,2,1);
+  console.log(equation2.getResult());
+  let equation3 = new QuadraticEquation(1,2,3);
+  console.log(equation3.getResult());
+</script>
+</body>
+</html>
