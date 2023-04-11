@@ -1,33 +1,5 @@
-abstract class Employee {
-    protected constructor(private firstName: string,
-                          private lastName: string) {
-    }
-
-    abstract getSalary(): number
-
-    get fullName(): string {
-        return `${this.firstName} ${this.lastName}`;
-    }
-
-    compensationStatement(): string {
-        return `${this.fullName} makes ${this.getSalary()} a month.`;
-    }
-}
-
-class FullTimeEmployee extends Employee {
-    constructor(firstName: string,
-                lastName: string,
-                public salary: number) {
-        super(firstName, lastName);
-
-    }
-
-    getSalary(): number {
-        return this.salary;
-    }
-}
-
-let john = new FullTimeEmployee('John', 'Doe', 12000);
-
-console.log(john.compensationStatement());
-console.log(john.salary)
+let number = Math.floor(Math.random()*100);
+let a = 100;
+a+= a*number/100;
+console.log(number);
+console.log(a);

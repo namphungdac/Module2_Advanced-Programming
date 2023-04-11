@@ -2,7 +2,7 @@
 <project version="4">
   <component name="VcsDirectoryMappings">
     <mapping directory="$PROJECT_DIR$" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/lesson6_Abstract-class_and_Interface/TH_Triển-khai-interface-Comparable/typescript-shape-oop" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/lesson6_Abstract-class_and_Interface/typescript-shape-oop" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/lesson7_Clean-Code/typescript-cleancode-refactoring-variable-extraction" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/lesson7_Clean-Code/typescript-cleancode-tennis-game" vcs="Git" />
   </component>
 </project>
