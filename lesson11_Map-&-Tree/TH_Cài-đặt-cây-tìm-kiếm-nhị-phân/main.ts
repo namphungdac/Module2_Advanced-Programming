@@ -20,7 +20,7 @@ tree.insertNode(new Node<number>(17));
 tree.insertNode(new Node<number>(13.5));
 tree.insertNode(new Node<number>(9));
 // console.log(tree);
-console.log("==============================")
+console.log("============================")
 // tree.deleteNode(15);
 // console.log(tree.roof.left.right);
 // tree.PreorderTraversal(tree.roof);
