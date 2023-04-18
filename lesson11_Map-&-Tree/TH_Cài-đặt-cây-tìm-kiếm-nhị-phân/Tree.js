@@ -93,6 +93,27 @@ var Tree = /** @class */ (function () {
         }
         this.size--;
     };
+    Tree.prototype.PreorderTraversal = function (node) {
+        if (node) {
+            console.log(node.data);
+            this.PreorderTraversal(node.left);
+            this.PreorderTraversal(node.right);
+        }
+    };
+    Tree.prototype.InorderTraversal = function (node) {
+        if (node) {
+            this.InorderTraversal(node.left);
+            console.log(node.data);
+            this.InorderTraversal(node.right);
+        }
+    };
+    Tree.prototype.PostorderTraversal = function (node) {
+        if (node) {
+            this.PostorderTraversal(node.left);
+            this.PostorderTraversal(node.right);
+            console.log(node.data);
+        }
+    };
     return Tree;
 }());
 exports.Tree = Tree;

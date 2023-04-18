@@ -83,4 +83,28 @@ export class Tree<T> {
         }
         this.size--;
     }
+
+    PreorderTraversal(node: Node<T> | null): void {
+        if (node) {
+            console.log(node.data);
+            this.PreorderTraversal(node.left);
+            this.PreorderTraversal(node.right);
+        }
+    }
+
+    InorderTraversal(node: Node<T> | null): void {
+        if (node) {
+            this.InorderTraversal(node.left);
+            console.log(node.data);
+            this.InorderTraversal(node.right);
+        }
+    }
+
+    PostorderTraversal(node: Node<T> | null): void {
+        if (node) {
+            this.PostorderTraversal(node.left);
+            this.PostorderTraversal(node.right);
+            console.log(node.data);
+        }
+    }
 }
