@@ -1,11 +1,11 @@
 import {Node} from "./Node";
 
 export class Tree<T> {
-    constructor(public roof:Node<T>|null = null,
-                protected size:number = 0) {
+    constructor(public roof: Node<T> | null = null,
+                protected size: number = 0) {
     }
 
-    insertNode(node:Node<T>):void {
+    insertNode(node: Node<T>): void {
         if (!this.roof) {
             this.roof = node;
         } else {
@@ -29,7 +29,7 @@ export class Tree<T> {
         this.size++;
     }
 
-    deleteNode(data:T):void {
+    deleteNode(data: T): void {
         let currentNode = this.roof;
         let previousNode = currentNode;
         while (currentNode.data !== data) {
@@ -41,14 +41,14 @@ export class Tree<T> {
             }
         }
         let tempNode = currentNode;
-        if(currentNode.left == null && currentNode.right == null) {
-            if (previousNode.left === currentNode){
-                previousNode.left =null;
+        if (currentNode.left == null && currentNode.right == null) {
+            if (previousNode.left === currentNode) {
+                previousNode.left = null;
             } else if (previousNode.right === currentNode) {
-                previousNode.right =null;
+                previousNode.right = null;
             }
             currentNode = null;
-        }else if (currentNode.left) {
+        } else if (currentNode.left) {
             let preNode = currentNode;
             currentNode = currentNode.left
             if (currentNode.right) {
@@ -67,13 +67,19 @@ export class Tree<T> {
         } else if (currentNode.left === null && currentNode.right !== null) {
             let preNode = currentNode;
             currentNode = currentNode.right;
-            while (currentNode.left) {
-                preNode = currentNode;
-                currentNode = currentNode.left;
+            if (currentNode.left) {
+                while (currentNode.left) {
+                    preNode = currentNode;
+                    currentNode = currentNode.left;
+                }
+                tempNode.data = currentNode.data;
+                preNode.left = currentNode.right;
+                currentNode = null;
+            } else {
+                tempNode.data = currentNode.data;
+                tempNode.right = currentNode.right;
+                currentNode = null;
             }
-            tempNode.data = currentNode.data;
-            preNode.left = currentNode.right;
-            currentNode = null;
         }
         this.size--;
     }

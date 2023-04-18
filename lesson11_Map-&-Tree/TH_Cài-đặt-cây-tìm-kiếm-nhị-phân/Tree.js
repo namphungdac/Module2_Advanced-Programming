@@ -46,7 +46,7 @@ var Tree = /** @class */ (function () {
             }
         }
         var tempNode = currentNode;
-        if ((currentNode.left == null) && (currentNode.right == null)) {
+        if (currentNode.left == null && currentNode.right == null) {
             if (previousNode.left === currentNode) {
                 previousNode.left = null;
             }
@@ -76,13 +76,20 @@ var Tree = /** @class */ (function () {
         else if (currentNode.left === null && currentNode.right !== null) {
             var preNode = currentNode;
             currentNode = currentNode.right;
-            while (currentNode.left) {
-                preNode = currentNode;
-                currentNode = currentNode.left;
+            if (currentNode.left) {
+                while (currentNode.left) {
+                    preNode = currentNode;
+                    currentNode = currentNode.left;
+                }
+                tempNode.data = currentNode.data;
+                preNode.left = currentNode.right;
+                currentNode = null;
             }
-            tempNode.data = currentNode.data;
-            preNode.left = currentNode.right;
-            currentNode = null;
+            else {
+                tempNode.data = currentNode.data;
+                tempNode.right = currentNode.right;
+                currentNode = null;
+            }
         }
         this.size--;
     };
